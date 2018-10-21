@@ -1,0 +1,56 @@
+/*
+Theme Name: FIT3157 Simple Example
+Author: FIT3157 Team
+Description: Example theme for tutorial 9.
+Version: 0.0
+License: Public Domain
+License URI: http://creativecommons.org/publicdomain/zero/1.0/
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-family: sans-serif;
+}
+
+header {
+  background-color: #eee;
+  padding: 20px;
+}
+
+nav {
+  background-color: #ddd;
+  padding: 20px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+section {
+  background-color: #fff;
+  padding:20px;
+}
+
+footer {
+  background-color: #ddd;
+  padding: 20px;
+}
+
+img.size-large {
+  width: 100%;
+  height: auto;
+}
