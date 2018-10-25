@@ -24,23 +24,41 @@
   </header>
 	-->
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-	  <a class="navbar-brand" href="#">Navbar</a>
+	  <a class="navbar-brand" href="#">HRAFF</a>
+
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			 <?php
+						wp_nav_menu($arg = array (
+							'theme_location' => 'primary',
+							'menu_class' => 'navbar-nav'
+
+						));
+				?>
+
+		</div>
+
+
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-	  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-	    <ul class="navbar-nav">
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Link 1</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Link 2</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Link 3</a>
-	      </li>
-	    </ul>
-	  </div>
+
+				<!--
+
+				<ul class="navbar-nav">
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Link 1</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Link 2</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Link 3</a>
+			      </li>
+				 	</ul>
+
+			-->
+
+
 	</nav>
 <!-- Not ssure how this is needed leaving it here just incase we need it later
   <nav>
