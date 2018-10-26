@@ -15,7 +15,7 @@
             <div class="col-sm-5">
                 <form action="/action_page.php">
                  <div class="form-group" style="text-align: left">
-                 <label for="email">Suscribe Now!</label>
+                 <label for="email">Subcribe Now!</label>
                   <div class="form-inline">
                     <input type="email" class="form-control" id="email" size="30" placeholder="Enter Email Address">
                     <button type="submit" class="btn btn-primary">Submit</button>
