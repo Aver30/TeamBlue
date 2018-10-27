@@ -24,5 +24,11 @@
 
   add_action('init', 'register_teamblue_menus');
 
+  add_filter('query_vars', 'parameter_queryvars' );
+  function parameter_queryvars( $qvars )
+  {
+  $qvars[] = 'yourvarname';
+  return $qvars;
+  }
 
 ?>

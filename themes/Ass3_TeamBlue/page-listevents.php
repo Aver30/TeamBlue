@@ -2,11 +2,16 @@
 <?php
   /* Template Name: List Of Events*/
   get_header();
+  session_start();
+
 
 ?>
 <div>
   <?php
-    [pdb_list filter="event_city=Canberra"];
+  $var_value =$_GET["name"];
+  echo '<div class="container"> blah blah blah';
+  print_r($var_value);
+  echo '</div>';
 
   ?>
   hey there this is being displayed

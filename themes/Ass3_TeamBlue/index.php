@@ -1,6 +1,9 @@
 <!doctype html>
 <!-- https://www.proteusthemes.com/blog/displaying-custom-post-types-templates-querying/ -->
-<?php get_header(); ?>
+<?php
+get_header();
+
+?>
 
 
 <section>
@@ -41,14 +44,19 @@
 
 
 <!-- Print Custom Post Tiles -->
-
+<!-- TO BE CONTINUED -->
 <?php
+
+  $var_value ='hellothere';
+  $_SESSION['testing'] = $var_value;
+
   $args = array('post_type'=> 'event');
 
   if(isset($_POST['submit'])){
     echo '<div class="container"> blah blah blah';
     print_r($args);
     echo '</div>';
+
 
     $args = array(
       'post_type' => 'event',
@@ -62,9 +70,11 @@
     );
   }
   else{
+    $location = $_POST['city'];
     $args = array('post_type' => 'event');
     echo '<div class="container"> blah blah blah';
-    print_r($args);
+    print_r($location);
+    //print_r($args);
     echo '</div>';
   }
   /*
@@ -80,6 +90,9 @@
   )
   */
 
+
+
+
   $events = new WP_Query($args);
   if ($events->have_posts()):
   ?>
@@ -93,11 +106,22 @@
             ?>
             <!-- For Each Post -->
               <div class="col-sm-4">
-                <div class="card" style="width: 18rem; height: 30rem;">
+                <div class="card" style="width: 18rem; height: 28rem;">
                   <!-- Add Image here -->
                   <!-- <img class="card-img-top" src="http://localhost:3157/teamblue/wp-content/uploads/2018/10/Step-300x125.jpg" alt="" width="100%" height="100rem" /> -->
                   <?php
                   $image = get_field('event_image');
+                  $test1 = array (
+                    'page_id'   => '6',
+                    'name'  => 'hello'
+                  );
+                  //$query1 = build_query( $test1 );
+
+                  $url = set_url_scheme(
+                        'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']
+                    );
+                  $url = add_query_arg($test1, $url);
+
                   echo '<img src="';
                   print_r($image);
                   echo '" style="width: 18rem">';
@@ -106,8 +130,11 @@
 
                     <h5 class="card-title"> <?php the_field('event_name') ?> </h5>
                     <p><?php get_field('event_image')?></p>
-                    <p class="card-text"> <?php the_field('event_description') ?>  </p>
-                    <a href="#" class="btn btn-primary">More..</a>
+                    <p class="card-text"> <?php the_field('event_description') ?> </p>
+
+                     <a href=<?php print_r($url) ?> class="btn btn-primary">More..</a>
+
+
                   </div>
                 </div>
                 <?php
