@@ -11,12 +11,12 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Dumping database structure for fit3157
-DROP DATABASE IF EXISTS `fit3157`;
-CREATE DATABASE IF NOT EXISTS `fit3157` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
-USE `fit3157`;
+-- Dumping database structure for teamblue
+DROP DATABASE IF EXISTS `teamblue`;
+CREATE DATABASE IF NOT EXISTS `teamblue` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
+USE `teamblue`;
 
--- Dumping structure for table fit3157.teamblue_database
+-- Dumping structure for table teamblue.teamblue_database
 DROP TABLE IF EXISTS `teamblue_database`;
 CREATE TABLE IF NOT EXISTS `teamblue_database` (
   `event_name` tinytext COLLATE utf8_unicode_ci,
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `teamblue_database` (
   `event_description` text COLLATE utf8_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table fit3157.teamblue_database: ~10 rows (approximately)
+-- Dumping data for table teamblue.teamblue_database: ~10 rows (approximately)
 DELETE FROM `teamblue_database`;
 /*!40000 ALTER TABLE `teamblue_database` DISABLE KEYS */;
 INSERT INTO `teamblue_database` (`event_name`, `event_date`, `event_topic`, `event_type`, `event_image`, `event_city`, `event_description`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `teamblue_database` (`event_name`, `event_date`, `event_topic`, `eve
 	('A Woman Captured', '0000-00-00', 'Woman', 'Film', 'a_woman_captured.jpg', 'Syndey', 'Marish has been exploited and abused for more than 10 years by the woman for whom she toils as a housekeeper—entirely unpaid. She even has to hand over the money she earns with an extra job as a cleaner in a factory. She’s forbidden to do anything without permission. Marish’s 18-year-old daughter couldn’t stand it anymore and ran away a couple of years ago, but Marish lives with too much fear in her heart. Can she ever learn to trust people again? She dreams of seeing her daughter again but will she find the courage to take a step forward in her life?');
 /*!40000 ALTER TABLE `teamblue_database` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_commentmeta
+-- Dumping structure for table teamblue.wp_commentmeta
 DROP TABLE IF EXISTS `wp_commentmeta`;
 CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -56,12 +56,12 @@ CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
   KEY `meta_key` (`meta_key`(191))
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table fit3157.wp_commentmeta: 0 rows
+-- Dumping data for table teamblue.wp_commentmeta: 0 rows
 DELETE FROM `wp_commentmeta`;
 /*!40000 ALTER TABLE `wp_commentmeta` DISABLE KEYS */;
 /*!40000 ALTER TABLE `wp_commentmeta` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_comments
+-- Dumping structure for table teamblue.wp_comments
 DROP TABLE IF EXISTS `wp_comments`;
 CREATE TABLE IF NOT EXISTS `wp_comments` (
   `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -87,14 +87,14 @@ CREATE TABLE IF NOT EXISTS `wp_comments` (
   KEY `comment_author_email` (`comment_author_email`(10))
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table fit3157.wp_comments: 1 rows
+-- Dumping data for table teamblue.wp_comments: 1 rows
 DELETE FROM `wp_comments`;
 /*!40000 ALTER TABLE `wp_comments` DISABLE KEYS */;
 INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `comment_author_email`, `comment_author_url`, `comment_author_IP`, `comment_date`, `comment_date_gmt`, `comment_content`, `comment_karma`, `comment_approved`, `comment_agent`, `comment_type`, `comment_parent`, `user_id`) VALUES
 	(1, 1, 'A WordPress Commenter', 'wapuu@wordpress.example', 'https://wordpress.org/', '', '2018-10-21 04:26:51', '2018-10-21 04:26:51', 'Hi, this is a comment.\nTo get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.\nCommenter avatars come from <a href="https://gravatar.com">Gravatar</a>.', 0, '1', '', '', 0, 0);
 /*!40000 ALTER TABLE `wp_comments` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_links
+-- Dumping structure for table teamblue.wp_links
 DROP TABLE IF EXISTS `wp_links`;
 CREATE TABLE IF NOT EXISTS `wp_links` (
   `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -114,12 +114,12 @@ CREATE TABLE IF NOT EXISTS `wp_links` (
   KEY `link_visible` (`link_visible`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table fit3157.wp_links: 0 rows
+-- Dumping data for table teamblue.wp_links: 0 rows
 DELETE FROM `wp_links`;
 /*!40000 ALTER TABLE `wp_links` DISABLE KEYS */;
 /*!40000 ALTER TABLE `wp_links` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_options
+-- Dumping structure for table teamblue.wp_options
 DROP TABLE IF EXISTS `wp_options`;
 CREATE TABLE IF NOT EXISTS `wp_options` (
   `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -128,9 +128,9 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   `autoload` varchar(20) NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=MyISAM AUTO_INCREMENT=254 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=255 DEFAULT CHARSET=utf8;
 
--- Dumping data for table fit3157.wp_options: 164 rows
+-- Dumping data for table teamblue.wp_options: 164 rows
 DELETE FROM `wp_options`;
 /*!40000 ALTER TABLE `wp_options` DISABLE KEYS */;
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
@@ -236,7 +236,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 	(100, 'widget_meta', 'a:2:{i:2;a:1:{s:5:"title";s:0:"";}s:12:"_multiwidget";i:1;}', 'yes'),
 	(101, 'sidebars_widgets', 'a:2:{s:19:"wp_inactive_widgets";a:6:{i:0;s:8:"search-2";i:1;s:14:"recent-posts-2";i:2;s:17:"recent-comments-2";i:3;s:10:"archives-2";i:4;s:12:"categories-2";i:5;s:6:"meta-2";}s:13:"array_version";i:3;}', 'yes'),
 	(110, 'widget_custom_html', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
-	(111, 'cron', 'a:5:{i:1540607218;a:1:{s:34:"wp_privacy_delete_old_export_files";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1540614418;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1540615630;a:2:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}s:25:"delete_expired_transients";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1540617417;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
+	(111, 'cron', 'a:5:{i:1540610818;a:1:{s:34:"wp_privacy_delete_old_export_files";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:6:"hourly";s:4:"args";a:0:{}s:8:"interval";i:3600;}}}i:1540614418;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1540615630;a:2:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}s:25:"delete_expired_transients";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1540617417;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
 	(119, '_site_transient_timeout_browser_8651940b33fd1e958c905441aa40a03d', '1540700845', 'no'),
 	(113, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:1:{i:0;O:8:"stdClass":10:{s:8:"response";s:6:"latest";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.9.8.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.9.8.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.9.8-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.9.8-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.9.8";s:7:"version";s:5:"4.9.8";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:0:"";}}s:12:"last_checked";i:1540605107;s:15:"version_checked";s:5:"4.9.8";s:12:"translations";a:0:{}}', 'no'),
 	(120, '_site_transient_browser_8651940b33fd1e958c905441aa40a03d', 'a:10:{s:4:"name";s:6:"Chrome";s:7:"version";s:13:"69.0.3497.100";s:8:"platform";s:7:"Windows";s:10:"update_url";s:29:"https://www.google.com/chrome";s:7:"img_src";s:43:"http://s.w.org/images/browsers/chrome.png?1";s:11:"img_src_ssl";s:44:"https://s.w.org/images/browsers/chrome.png?1";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;s:6:"mobile";b:0;}', 'no'),
@@ -300,7 +300,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 	(155, 'insert-headers-and-footers_welcome_dismissed_key', '1', 'yes');
 /*!40000 ALTER TABLE `wp_options` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_participants_database
+-- Dumping structure for table teamblue.wp_participants_database
 DROP TABLE IF EXISTS `wp_participants_database`;
 CREATE TABLE IF NOT EXISTS `wp_participants_database` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
@@ -325,14 +325,14 @@ CREATE TABLE IF NOT EXISTS `wp_participants_database` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table fit3157.wp_participants_database: 1 rows
+-- Dumping data for table teamblue.wp_participants_database: 1 rows
 DELETE FROM `wp_participants_database`;
 /*!40000 ALTER TABLE `wp_participants_database` DISABLE KEYS */;
 INSERT INTO `wp_participants_database` (`id`, `private_id`, `first_name`, `last_name`, `address`, `city`, `state`, `country`, `zip`, `phone`, `email`, `mailing_list`, `photo`, `website`, `interests`, `approved`, `date_recorded`, `date_updated`, `last_accessed`) VALUES
 	(1, 'J6X2C', 'Aakash', 'Verma', '95 Endeavour Drive', 'Cranbourne North', 'VIC', 'Australia', '3977', '469803888', 'axe', 'Yes', '', '', '', 'no', '2018-10-26 01:41:04', '2018-10-26 01:41:04', NULL);
 /*!40000 ALTER TABLE `wp_participants_database` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_participants_database_fields
+-- Dumping structure for table teamblue.wp_participants_database_fields
 DROP TABLE IF EXISTS `wp_participants_database_fields`;
 CREATE TABLE IF NOT EXISTS `wp_participants_database_fields` (
   `id` int(3) NOT NULL AUTO_INCREMENT,
@@ -358,7 +358,7 @@ CREATE TABLE IF NOT EXISTS `wp_participants_database_fields` (
   KEY `group` (`group`)
 ) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table fit3157.wp_participants_database_fields: 19 rows
+-- Dumping data for table teamblue.wp_participants_database_fields: 19 rows
 DELETE FROM `wp_participants_database_fields`;
 /*!40000 ALTER TABLE `wp_participants_database_fields` DISABLE KEYS */;
 INSERT INTO `wp_participants_database_fields` (`id`, `order`, `name`, `title`, `default`, `group`, `help_text`, `form_element`, `values`, `validation`, `display_column`, `admin_column`, `sortable`, `CSV`, `persistent`, `signup`, `readonly`) VALUES
@@ -383,7 +383,7 @@ INSERT INTO `wp_participants_database_fields` (`id`, `order`, `name`, `title`, `
 	(19, 18, 'last_accessed', 'Last Accessed', NULL, 'internal', NULL, 'timestamp', NULL, 'no', 0, 0, 1, 0, 0, 0, 1);
 /*!40000 ALTER TABLE `wp_participants_database_fields` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_participants_database_groups
+-- Dumping structure for table teamblue.wp_participants_database_groups
 DROP TABLE IF EXISTS `wp_participants_database_groups`;
 CREATE TABLE IF NOT EXISTS `wp_participants_database_groups` (
   `id` int(3) NOT NULL AUTO_INCREMENT,
@@ -397,7 +397,7 @@ CREATE TABLE IF NOT EXISTS `wp_participants_database_groups` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table fit3157.wp_participants_database_groups: 4 rows
+-- Dumping data for table teamblue.wp_participants_database_groups: 4 rows
 DELETE FROM `wp_participants_database_groups`;
 /*!40000 ALTER TABLE `wp_participants_database_groups` DISABLE KEYS */;
 INSERT INTO `wp_participants_database_groups` (`id`, `order`, `display`, `admin`, `title`, `name`, `description`) VALUES
@@ -407,7 +407,7 @@ INSERT INTO `wp_participants_database_groups` (`id`, `order`, `display`, `admin`
 	(4, 4, 0, 0, 'Record Info', 'internal', NULL);
 /*!40000 ALTER TABLE `wp_participants_database_groups` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_postmeta
+-- Dumping structure for table teamblue.wp_postmeta
 DROP TABLE IF EXISTS `wp_postmeta`;
 CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -419,7 +419,7 @@ CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   KEY `meta_key` (`meta_key`(191))
 ) ENGINE=MyISAM AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 
--- Dumping data for table fit3157.wp_postmeta: 41 rows
+-- Dumping data for table teamblue.wp_postmeta: 41 rows
 DELETE FROM `wp_postmeta`;
 /*!40000 ALTER TABLE `wp_postmeta` DISABLE KEYS */;
 INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
@@ -466,7 +466,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 	(58, 3, '_wp_desired_post_slug', 'privacy-policy');
 /*!40000 ALTER TABLE `wp_postmeta` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_posts
+-- Dumping structure for table teamblue.wp_posts
 DROP TABLE IF EXISTS `wp_posts`;
 CREATE TABLE IF NOT EXISTS `wp_posts` (
   `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -499,7 +499,7 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   KEY `post_author` (`post_author`)
 ) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
--- Dumping data for table fit3157.wp_posts: 18 rows
+-- Dumping data for table teamblue.wp_posts: 18 rows
 DELETE FROM `wp_posts`;
 /*!40000 ALTER TABLE `wp_posts` DISABLE KEYS */;
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
@@ -523,7 +523,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 	(20, 1, '2018-10-26 11:01:23', '2018-10-26 11:01:23', '<h2>Who we are</h2><p>Our website address is: http://localhost:3157/fit3157.</p><h2>What personal data we collect and why we collect it</h2><h3>Comments</h3><p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p><p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p><h3>Media</h3><p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p><h3>Contact forms</h3><h3>Cookies</h3><p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p><p>If you have an account and you log in to this site, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p><p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p><p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p><h3>Embedded content from other websites</h3><p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p><p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p><h3>Analytics</h3><h2>Who we share your data with</h2><h2>How long we retain your data</h2><p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p><p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p><h2>What rights you have over your data</h2><p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p><h2>Where we send your data</h2><p>Visitor comments may be checked through an automated spam detection service.</p><h2>Your contact information</h2><h2>Additional information</h2><h3>How we protect your data</h3><h3>What data breach procedures we have in place</h3><h3>What third parties we receive data from</h3><h3>What automated decision making and/or profiling we do with user data</h3><h3>Industry regulatory disclosure requirements</h3>', 'Privacy Policy', '', 'inherit', 'closed', 'closed', '', '3-revision-v1', '', '', '2018-10-26 11:01:23', '2018-10-26 11:01:23', '', 3, 'http://localhost:3157/fit3157/?p=20', 0, 'revision', '', 0);
 /*!40000 ALTER TABLE `wp_posts` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_sm_sessions
+-- Dumping structure for table teamblue.wp_sm_sessions
 DROP TABLE IF EXISTS `wp_sm_sessions`;
 CREATE TABLE IF NOT EXISTS `wp_sm_sessions` (
   `session_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -532,17 +532,17 @@ CREATE TABLE IF NOT EXISTS `wp_sm_sessions` (
   `session_expiry` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`session_key`),
   UNIQUE KEY `session_id` (`session_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=119 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=149 DEFAULT CHARSET=utf8;
 
--- Dumping data for table fit3157.wp_sm_sessions: 2 rows
+-- Dumping data for table teamblue.wp_sm_sessions: 2 rows
 DELETE FROM `wp_sm_sessions`;
 /*!40000 ALTER TABLE `wp_sm_sessions` DISABLE KEYS */;
 INSERT INTO `wp_sm_sessions` (`session_id`, `session_key`, `session_value`, `session_expiry`) VALUES
 	(45, 'dp48q8vea0f2ibfog8jnp02kn5', 'pdb-admin-user-settings-1|a:2:{s:10:"list_limit";i:10;s:17:"csv_base_filename";s:21:"participants-database";}pdb-admin_list_filter-1|a:4:{s:6:"search";a:1:{i:0;a:4:{s:12:"search_field";s:4:"none";s:5:"value";s:0:"";s:8:"operator";s:4:"LIKE";s:5:"logic";s:3:"AND";}}s:6:"sortBy";s:12:"date_updated";s:7:"ascdesc";s:4:"desc";s:17:"list_filter_count";i:1;}pdb-admin_list_query-1|s:70:"SELECT * FROM wp_participants_database p  ORDER BY p.date_updated desc";previous_multipage|N;form_status|s:6:"normal";', 1540516244),
-	(118, 'fcc76ees77kken2fpk6713mid5', 'pdb-admin-user-settings-1|a:1:{s:10:"list_limit";i:10;}pdb-admin_list_filter-1|a:4:{s:6:"search";a:1:{i:0;a:4:{s:12:"search_field";s:4:"none";s:5:"value";s:0:"";s:8:"operator";s:4:"LIKE";s:5:"logic";s:3:"AND";}}s:6:"sortBy";s:12:"date_updated";s:7:"ascdesc";s:4:"desc";s:17:"list_filter_count";i:1;}pdb-admin_list_query-1|s:70:"SELECT * FROM wp_participants_database p  ORDER BY p.date_updated desc";', 1540641220);
+	(148, 'fcc76ees77kken2fpk6713mid5', 'pdb-admin-user-settings-1|a:1:{s:10:"list_limit";i:10;}pdb-admin_list_filter-1|a:4:{s:6:"search";a:1:{i:0;a:4:{s:12:"search_field";s:4:"none";s:5:"value";s:0:"";s:8:"operator";s:4:"LIKE";s:5:"logic";s:3:"AND";}}s:6:"sortBy";s:12:"date_updated";s:7:"ascdesc";s:4:"desc";s:17:"list_filter_count";i:1;}pdb-admin_list_query-1|s:70:"SELECT * FROM wp_participants_database p  ORDER BY p.date_updated desc";', 1540644722);
 /*!40000 ALTER TABLE `wp_sm_sessions` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_termmeta
+-- Dumping structure for table teamblue.wp_termmeta
 DROP TABLE IF EXISTS `wp_termmeta`;
 CREATE TABLE IF NOT EXISTS `wp_termmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -554,12 +554,12 @@ CREATE TABLE IF NOT EXISTS `wp_termmeta` (
   KEY `meta_key` (`meta_key`(191))
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table fit3157.wp_termmeta: 0 rows
+-- Dumping data for table teamblue.wp_termmeta: 0 rows
 DELETE FROM `wp_termmeta`;
 /*!40000 ALTER TABLE `wp_termmeta` DISABLE KEYS */;
 /*!40000 ALTER TABLE `wp_termmeta` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_terms
+-- Dumping structure for table teamblue.wp_terms
 DROP TABLE IF EXISTS `wp_terms`;
 CREATE TABLE IF NOT EXISTS `wp_terms` (
   `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -571,7 +571,7 @@ CREATE TABLE IF NOT EXISTS `wp_terms` (
   KEY `name` (`name`(191))
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table fit3157.wp_terms: 2 rows
+-- Dumping data for table teamblue.wp_terms: 2 rows
 DELETE FROM `wp_terms`;
 /*!40000 ALTER TABLE `wp_terms` DISABLE KEYS */;
 INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
@@ -579,7 +579,7 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 	(2, 'navBarBootStrap', 'navbarbootstrap', 0);
 /*!40000 ALTER TABLE `wp_terms` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_term_relationships
+-- Dumping structure for table teamblue.wp_term_relationships
 DROP TABLE IF EXISTS `wp_term_relationships`;
 CREATE TABLE IF NOT EXISTS `wp_term_relationships` (
   `object_id` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -589,7 +589,7 @@ CREATE TABLE IF NOT EXISTS `wp_term_relationships` (
   KEY `term_taxonomy_id` (`term_taxonomy_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table fit3157.wp_term_relationships: 4 rows
+-- Dumping data for table teamblue.wp_term_relationships: 4 rows
 DELETE FROM `wp_term_relationships`;
 /*!40000 ALTER TABLE `wp_term_relationships` DISABLE KEYS */;
 INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES
@@ -599,7 +599,7 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 	(16, 2, 0);
 /*!40000 ALTER TABLE `wp_term_relationships` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_term_taxonomy
+-- Dumping structure for table teamblue.wp_term_taxonomy
 DROP TABLE IF EXISTS `wp_term_taxonomy`;
 CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
   `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -613,7 +613,7 @@ CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
   KEY `taxonomy` (`taxonomy`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table fit3157.wp_term_taxonomy: 2 rows
+-- Dumping data for table teamblue.wp_term_taxonomy: 2 rows
 DELETE FROM `wp_term_taxonomy`;
 /*!40000 ALTER TABLE `wp_term_taxonomy` DISABLE KEYS */;
 INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `description`, `parent`, `count`) VALUES
@@ -621,7 +621,7 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 	(2, 2, 'nav_menu', '', 0, 2);
 /*!40000 ALTER TABLE `wp_term_taxonomy` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_usermeta
+-- Dumping structure for table teamblue.wp_usermeta
 DROP TABLE IF EXISTS `wp_usermeta`;
 CREATE TABLE IF NOT EXISTS `wp_usermeta` (
   `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -633,7 +633,7 @@ CREATE TABLE IF NOT EXISTS `wp_usermeta` (
   KEY `meta_key` (`meta_key`(191))
 ) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
--- Dumping data for table fit3157.wp_usermeta: 23 rows
+-- Dumping data for table teamblue.wp_usermeta: 23 rows
 DELETE FROM `wp_usermeta`;
 /*!40000 ALTER TABLE `wp_usermeta` DISABLE KEYS */;
 INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALUES
@@ -662,7 +662,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 	(23, 1, 'metaboxhidden_nav-menus', 'a:1:{i:0;s:12:"add-post_tag";}');
 /*!40000 ALTER TABLE `wp_usermeta` ENABLE KEYS */;
 
--- Dumping structure for table fit3157.wp_users
+-- Dumping structure for table teamblue.wp_users
 DROP TABLE IF EXISTS `wp_users`;
 CREATE TABLE IF NOT EXISTS `wp_users` (
   `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -681,7 +681,7 @@ CREATE TABLE IF NOT EXISTS `wp_users` (
   KEY `user_email` (`user_email`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table fit3157.wp_users: 1 rows
+-- Dumping data for table teamblue.wp_users: 1 rows
 DELETE FROM `wp_users`;
 /*!40000 ALTER TABLE `wp_users` DISABLE KEYS */;
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
