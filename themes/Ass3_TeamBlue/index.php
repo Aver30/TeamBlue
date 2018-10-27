@@ -1,36 +1,70 @@
 <!doctype html>
-
+<!-- https://www.proteusthemes.com/blog/displaying-custom-post-types-templates-querying/ -->
 <?php get_header(); ?>
 
 
 <section>
 <!-- ========== START PAGE TEMPLATE ========== -->
 
-  <h2><?php wp_title( '' ); ?></h2>
-  <!-- This is where it checks all posts and prints them.-->
-  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<?php
+  $args = array(
+    'post_type' => 'event'
+  );
 
+  $events = new WP_Query($args);
+  if ($events->have_posts()):
+  ?>
+<!-- Enter Div Tag -->
+<!-- <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+-->
 
-    <article>
-
-      <?php if ( is_archive() || is_home() ) { ?>
-        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+    <div class="container" style="margin-top: 40px">
+      <div class="card-columns">
         <?php
-        the_post_thumbnail( 'thumbnail' );
-        the_excerpt();
-      } else {
-        the_post_thumbnail( 'large' );
-        the_content();
-      }?>
+          while( $events->have_posts() ) :
+            $events->the_post();
+            ?>
+            <!-- For Each Post -->
+              <div class="col-sm-4">
+                <div class="card" style="width: 18rem; height: 18rem;">
+                  <!-- Add Image here -->
+                  <img class="card-img-top" src=<?php get_field('event_image')?>>
+                  <div class="card-body">
+                    <h5 class="card-title"> <?php the_field('event_name') ?> </h5>
+                    <p class="card-text"> <?php the_field('event_description') ?>  </p>
+                    <a href="#" class="btn btn-primary">More..</a>
+                  </div>
+                </div>
+              </div>
 
-    </article>
 
-  <?php endwhile; else : ?> <!-- Loop End here, Else Start -->
+            <?php
+          endwhile;
+          wp_reset_postdata();
+        ?>
+      </div>
+    </div>
 
-  <h2>Error</h2>
-  <p>Sorry, no posts matched your criteria.</p>
+    <?php
+    else :
+        esc_html_e( 'No testimonials in the diving taxonomy!', 'text-domain' );
+    endif;
+    ?>
 
-  <?php endif; ?>
+
+
+
+
+
+
+
 
 <!-- ========== END PAGE TEMPLATE ========== -->
 </section>
