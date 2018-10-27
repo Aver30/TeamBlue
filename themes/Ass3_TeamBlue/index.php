@@ -33,15 +33,34 @@
             ?>
             <!-- For Each Post -->
               <div class="col-sm-4">
-                <div class="card" style="width: 18rem; height: 18rem;">
+                <div class="card" style="width: 18rem; height: 30rem;">
                   <!-- Add Image here -->
-                  <img class="card-img-top" src=<?php get_field('event_image')?>>
+                  <!-- <img class="card-img-top" src="http://localhost:3157/teamblue/wp-content/uploads/2018/10/Step-300x125.jpg" alt="" width="100%" height="100rem" /> -->
+                  <?php
+                  $image = get_field('event_image');
+                  echo '<img src="';
+                  print_r($image);
+                  echo '" style="width: 18rem">';
+                  ?>
                   <div class="card-body">
+
                     <h5 class="card-title"> <?php the_field('event_name') ?> </h5>
+                    <p><?php get_field('event_image')?></p>
                     <p class="card-text"> <?php the_field('event_description') ?>  </p>
                     <a href="#" class="btn btn-primary">More..</a>
                   </div>
                 </div>
+                <?php
+                echo get_the_post_thumbnail($my_id,
+                      'full',
+                      array(
+                          'alt'   => $post_title,
+                          'title' => $post_title,
+                          'class' => 'my_post_img_class'
+                      )
+                  );
+                  ?>
+
               </div>
 
 
