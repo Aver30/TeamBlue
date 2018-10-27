@@ -5,25 +5,85 @@
 
 <section>
 <!-- ========== START PAGE TEMPLATE ========== -->
+<!-- Add Filter Options -->
+<div class="row">
+  <div class="container" style="margin-top: 40px">
+
+    <form class="form-inline">
+      <select class="form-control col-sm-3 " name='city' style="margin-right: 20px">
+        <option value="array('Melbourne', 'Canberra')">All Locations</option>
+        <option value="Melbourne">Melbourne</option>
+        <option value="Canberra">Canberra</option>
+      </select>
+
+      <select class="form-control col-sm-3" name='topic' style="margin-right: 20px">
+        <option value="All Topics">All Topics</option>
+        <option value="Conflict">Conflict</option>
+        <option value="Woman Rights">Woman Rights</option>
+        <option value="Woman">Woman</option>
+      </select>
+
+      <select class="form-control col-sm-3 " name='type'>
+        <option value="All Types">All Types</option>
+        <option value="Film">Film</option>
+        <option value="Music">Music</option>
+        <option value="Article">Article</option>
+
+      </select>
+
+     <button type="submit" name='submit' class="btn btn-primary mb-2">Filter</button>
+    </form>
+
+
+  </div>
+</div>
+
+
+
+<!-- Print Custom Post Tiles -->
 
 <?php
-  $args = array(
-    'post_type' => 'event'
-  );
+  $args = array('post_type'=> 'event');
+
+  if(isset($_POST['submit'])){
+    echo '<div class="container"> blah blah blah';
+    print_r($args);
+    echo '</div>';
+
+    $args = array(
+      'post_type' => 'event',
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'city',
+          'field' => 'name',
+          'terms' => $location
+        )
+      )
+    );
+  }
+  else{
+    $args = array('post_type' => 'event');
+    echo '<div class="container"> blah blah blah';
+    print_r($args);
+    echo '</div>';
+  }
+  /*
+  array(
+    'taxonomy' => 'event_type',
+    'field' => 'name',
+    'terms' => 'Film'
+  ),
+  array(
+    'taxonomy' => 'topic',
+    'field' => 'name',
+    'terms' => 'Conflict'
+  )
+  */
 
   $events = new WP_Query($args);
   if ($events->have_posts()):
   ?>
-<!-- Enter Div Tag -->
-<!-- <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
--->
+
 
     <div class="container" style="margin-top: 40px">
       <div class="card-columns">
