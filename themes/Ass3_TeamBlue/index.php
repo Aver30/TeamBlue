@@ -17,6 +17,7 @@ get_header();
         <option value="">All Locations</option>
         <option value="Melbourne">Melbourne</option>
         <option value="Canberra">Canberra</option>
+        <option value="Canberra">Sydney</option>
       </select>
 
       <select onchange="topicchange(value)" class="form-control col-sm-3" name='topic' style="margin-right: 20px">
@@ -24,6 +25,8 @@ get_header();
         <option value="Conflict">Conflict</option>
         <option value="Woman Rights">Woman Rights</option>
         <option value="Woman">Woman</option>
+        <option value="Expression">Express Yourself</option>
+        <option value="Profile">Profile</option>
       </select>
 
       <select onchange="typechange(value)" class="form-control col-sm-3 " name='type' style="margin-right: 20px">
@@ -57,10 +60,10 @@ function listAllEvents(){
     $topic = $_GET['topic'];
     $GLOBALS['gtype'] = $type;
     if($location == ''){
-      $location = array('Melbourne', 'Canberra');
+      $location = array('Melbourne', 'Canberra','Sydney');
     }
     if ($topic == ''){
-      $topic = array('Conflict','Woman Rights', 'Woman');
+      $topic = array('Conflict','Woman Rights', 'Woman','Expression', 'Profile');
     }
     if ($type == ''){
       $type = array('Film', 'Article', 'Music');
