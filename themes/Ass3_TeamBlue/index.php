@@ -13,28 +13,28 @@ get_header();
   <div class="container" style="margin-top: 40px">
 
     <form class="form-inline">
-      <select class="form-control col-sm-3 " name='city' style="margin-right: 20px">
-        <option value="array('Melbourne', 'Canberra')">All Locations</option>
+      <select  method="post" class="form-control col-sm-3 " name='city' style="margin-right: 20px">
+        <option value="">All Locations</option>
         <option value="Melbourne">Melbourne</option>
         <option value="Canberra">Canberra</option>
       </select>
 
-      <select class="form-control col-sm-3" name='topic' style="margin-right: 20px">
-        <option value="All Topics">All Topics</option>
+      <select onchange="topicchange(value)" class="form-control col-sm-3" name='topic' style="margin-right: 20px">
+        <option value="">All Topics</option>
         <option value="Conflict">Conflict</option>
         <option value="Woman Rights">Woman Rights</option>
         <option value="Woman">Woman</option>
       </select>
 
-      <select class="form-control col-sm-3 " name='type'>
-        <option value="All Types">All Types</option>
+      <select onchange="typechange(value)" class="form-control col-sm-3 " name='type' style="margin-right: 20px">
+        <option value="">All Types</option>
         <option value="Film">Film</option>
         <option value="Music">Music</option>
         <option value="Article">Article</option>
 
       </select>
 
-     <button type="submit" name='submit' class="btn btn-primary mb-2">Filter</button>
+     <button type="submit" name='' class="btn btn-primary mb-2">Filter</button>
     </form>
 
 
@@ -45,18 +45,26 @@ get_header();
 
 <!-- Print Custom Post Tiles -->
 <!-- TO BE CONTINUED -->
+<div id="AllEvents"  class="container" style="margin-top: 40px">
 <?php
 
-  $var_value ='hellothere';
-  $_SESSION['testing'] = $var_value;
-
+function listAllEvents(){
   $args = array('post_type'=> 'event');
 
-  if(isset($_POST['submit'])){
-    echo '<div class="container"> blah blah blah';
-    print_r($args);
-    echo '</div>';
 
+    $location = $_GET['city'];
+    $type = $_GET['type'];
+    $topic = $_GET['topic'];
+    $GLOBALS['gtype'] = $type;
+    if($location == ''){
+      $location = array('Melbourne', 'Canberra');
+    }
+    if ($topic == ''){
+      $topic = array('Conflict','Woman Rights', 'Woman');
+    }
+    if ($type == ''){
+      $type = array('Film', 'Article', 'Music');
+    }
 
     $args = array(
       'post_type' => 'event',
@@ -65,104 +73,80 @@ get_header();
           'taxonomy' => 'city',
           'field' => 'name',
           'terms' => $location
+        ),
+        array(
+          'taxonomy' => 'topic',
+          'field' => 'name',
+          'terms' => $topic
+
+        ),
+        array(
+          'taxonomy' => 'event_type',
+          'field' => 'name',
+          'terms' => $type
         )
       )
     );
-  }
-  else{
-    $location = $_POST['city'];
-    $args = array('post_type' => 'event');
-    echo '<div class="container"> blah blah blah';
-    print_r($location);
-    //print_r($args);
-    echo '</div>';
-  }
-  /*
-  array(
-    'taxonomy' => 'event_type',
-    'field' => 'name',
-    'terms' => 'Film'
-  ),
-  array(
-    'taxonomy' => 'topic',
-    'field' => 'name',
-    'terms' => 'Conflict'
-  )
-  */
-
-
-
 
   $events = new WP_Query($args);
   if ($events->have_posts()):
-  ?>
 
 
-    <div class="container" style="margin-top: 40px">
-      <div class="card-columns">
-        <?php
+
+    echo  '<div class="card-columns">';
+
           while( $events->have_posts() ) :
             $events->the_post();
-            ?>
-            <!-- For Each Post -->
-              <div class="col-sm-4">
-                <div class="card" style="width: 18rem; height: 28rem;">
-                  <!-- Add Image here -->
-                  <!-- <img class="card-img-top" src="http://localhost:3157/teamblue/wp-content/uploads/2018/10/Step-300x125.jpg" alt="" width="100%" height="100rem" /> -->
-                  <?php
-                  $image = get_field('event_image');
-                  $test1 = array (
-                    'page_id'   => '6',
-                    'name'  => 'hello'
-                  );
-                  //$query1 = build_query( $test1 );
+
+            //<!-- For Each Post -->
+            echo  '<div class="col-sm-4">';
+            echo '<div class="card" style="width: 18rem; height: 28rem;">';
+
+                  // Construct url with event ID.
+                  $eventname = get_the_ID();
 
                   $url = set_url_scheme(
-                        'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']
-                    );
-                  $url = add_query_arg($test1, $url);
+                        'http://' . 'localhost:3157/teamblue/' . '?page_id=6&?name=' . strval($eventname)
+                  );
+
+
+                  // This is how u print Image
+                  $image = get_field('event_image');
 
                   echo '<img src="';
                   print_r($image);
                   echo '" style="width: 18rem">';
-                  ?>
-                  <div class="card-body">
-
-                    <h5 class="card-title"> <?php the_field('event_name') ?> </h5>
-                    <p><?php get_field('event_image')?></p>
-                    <p class="card-text"> <?php the_field('event_description') ?> </p>
-
-                     <a href=<?php print_r($url) ?> class="btn btn-primary">More..</a>
 
 
-                  </div>
-                </div>
-                <?php
-                echo get_the_post_thumbnail($my_id,
-                      'full',
-                      array(
-                          'alt'   => $post_title,
-                          'title' => $post_title,
-                          'class' => 'my_post_img_class'
-                      )
-                  );
-                  ?>
+                  echo '<div class="card-body">';
+                  $event_name = the_field('event_name');
 
-              </div>
+                  echo '<h5 class="card-title"> '.$event_name.'</h5>';
+                  $event_description = the_field('event_description');
+                  echo '<p class="card-text">'. $event_description .' </p>';
 
+                  echo '<a href="'. $url .'" class="btn btn-primary">More..</a>';
+                  echo '</div>';
+                echo '</div>';
 
-            <?php
+              echo '</div>';
+
           endwhile;
           wp_reset_postdata();
-        ?>
-      </div>
-    </div>
+          print_r($run);
+      echo '</div>';
+    echo '</div>';
 
-    <?php
+
     else :
         esc_html_e( 'No testimonials in the diving taxonomy!', 'text-domain' );
     endif;
-    ?>
+}
+
+
+listAllEvents();
+
+?>
 
 
 
