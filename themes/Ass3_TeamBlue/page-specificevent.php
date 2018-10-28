@@ -18,6 +18,7 @@
   $event_des = get_field('event_description');
   $event_topic = get_field('event_topic');
   $event_image = get_field('event_image');
+  $event_date = get_field('event_date');
 
   // This Prints Image.
   echo '<img src="';
