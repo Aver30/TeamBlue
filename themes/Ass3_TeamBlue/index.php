@@ -121,14 +121,17 @@ function listAllEvents(){
                   echo '" style="width: 18rem">';
 
 
+                  echo '<div class="card-body" style="height: 15rem;">';
+                    $event_name = the_field('event_name');
+
+                    echo '<h5 class="card-title"> '.$event_name.'</h5>';
+                    $event_description = the_field('event_description');
+                    echo '<p class="card-text">'. $event_description .' </p>';
+
+
+                  echo '</div>';
                   echo '<div class="card-body">';
-                  $event_name = the_field('event_name');
-
-                  echo '<h5 class="card-title"> '.$event_name.'</h5>';
-                  $event_description = the_field('event_description');
-                  echo '<p class="card-text">'. $event_description .' </p>';
-
-                  echo '<a href="'. $url .'" class="btn btn-primary">More..</a>';
+                    echo '<a href="'. $url .'" class="btn btn-primary">More..</a>';
                   echo '</div>';
                 echo '</div>';
 
