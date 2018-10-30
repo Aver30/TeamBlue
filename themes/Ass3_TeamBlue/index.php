@@ -118,7 +118,7 @@ function listAllEvents(){
 
                   echo '<img src="';
                   print_r($image);
-                  echo '" style="width: 18rem">';
+                  echo '" style="width: 18rem; height: 8rem">';
 
 
                   echo '<div class="card-body" style="height: 15rem;">';
