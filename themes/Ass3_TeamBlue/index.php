@@ -6,21 +6,21 @@ get_header();
 ?>
 
 
-<section>
+<section class="container">
 <!-- ========== START PAGE TEMPLATE ========== -->
 <!-- Add Filter Options -->
 <div class="row">
   <div class="container" style="margin-top: 40px">
 
     <form class="form-inline">
-      <select  method="post" class="form-control col-sm-3 " name='city' style="margin-right: 20px">
+      <select  method="post" class="form-control col-sm-3 " name='city' style="margin-left: 20px; margin-right: 20px">
         <option value="">All Locations</option>
         <option value="Melbourne">Melbourne</option>
         <option value="Canberra">Canberra</option>
         <option value="Canberra">Sydney</option>
       </select>
 
-      <select onchange="topicchange(value)" class="form-control col-sm-3" name='topic' style="margin-right: 20px">
+      <select class="form-control col-sm-3" name='topic' style="margin-right: 20px">
         <option value="">All Topics</option>
         <option value="Conflict">Conflict</option>
         <option value="Woman Rights">Woman Rights</option>
@@ -29,7 +29,7 @@ get_header();
         <option value="Profile">Profile</option>
       </select>
 
-      <select onchange="typechange(value)" class="form-control col-sm-3 " name='type' style="margin-right: 20px">
+      <select  class="form-control col-sm-3 " name='type' style="margin-right: 20px">
         <option value="">All Types</option>
         <option value="Film">Film</option>
         <option value="Music">Music</option>
