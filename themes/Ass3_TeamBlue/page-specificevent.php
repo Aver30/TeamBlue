@@ -8,7 +8,7 @@
 
 
   <?php
-  echo '<dic class="row">';   // Row to put image in
+  echo '<div class="row">';   // Row to put image in
     echo '<div class="col-sm-2"></div>';
     echo '<div class=" col-sm-8 d-flex justify-content-lg-center">';
 
