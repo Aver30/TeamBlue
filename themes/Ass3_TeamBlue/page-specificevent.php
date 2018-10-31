@@ -3,15 +3,9 @@
   get_header();
 ?>
 
-<div class="d-flex justify-content-lg-center">
-
-
-
   <?php
-  echo '<div class="row">';   // Row to put image in
-    echo '<div class="col-sm-2"></div>';
-    echo '<div class=" col-sm-8 d-flex justify-content-lg-center">';
 
+      echo '<div class="fill">';
       // This Provides the Event Post ID.
       $var_value = $_GET["?name"];
       // $event_post = get_post($var_value); // not the best way
@@ -27,33 +21,24 @@
       $event_image = get_field('event_image');
       $event_date = get_field('event_date');
 
-
       // This Prints Image.
       echo '<img src="';
       print_r($event_image);
-      echo '" style="width: 30rem">';
+      echo '" style="width: 10rem">';
 
-      echo '<br>';
+     // End row
+     echo '</div>';
 
-    echo '</div>';    // End Col-sm-8
-    echo '<div class="col-sm-2"></div>';
-
-  echo '</div>';
-
-  echo '<div class="row">';       // New To Add Text In
-
-    echo '<p class="text-centre">';
-    print_r($event_type . $event_topic);
-    echo '<p>';
-  echo '</div>';
-
-   // End row
+     echo '<div>';
+     print_r($event_des);
+     echo '</div>';
 
   ?>
 
+<button>Book Tickets</button>
 
 </div>
-</div>
+
 <?php
   get_footer();
 ?>

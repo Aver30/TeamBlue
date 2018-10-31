@@ -25,7 +25,7 @@
 
       <!-- Advert Banner -->
       <div class="container-fluid" id="advert"><br>
-
+        <img id="advert-img" src="https://2018.hraff.org.au/wp-content/uploads/2018/03/hraff-banner-980-x-120-980x120.jpg" alt="Advert">
       </div>
 
       <!-- Sponser banner -->
@@ -34,12 +34,14 @@
       </div>
 
       <!-- CopyRight banner -->
-      <div class="container-fluid" id="copyright"><br>
-
+      <div class="container-fluid" id="copyright">
+        <h6>© 2018 HRAFF - Human Rights Arts & Film Festival - hraff.org.au</h6>
+        <h6>Contact Us . Privacy . Terms & Conditions</h6>
       </div>
+
         <?php wp_footer(); ?> <!-- Include this before clsoing body -->
     </footer>
-    
+
 </div>
 </body>
 </html>

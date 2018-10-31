@@ -5,13 +5,10 @@ get_header();
 
 ?>
 
-
-<section class="container">
 <!-- ========== START PAGE TEMPLATE ========== -->
 <!-- Add Filter Options -->
-<div class="row">
-  <div class="container" style="margin-top: 40px">
 
+  <div id="catagories" style="margin-top: 40px">
     <form class="form-inline">
       <select  method="post" class="form-control col-sm-3 " name='city' style="margin-left: 20px; margin-right: 20px">
         <option value="">All Locations</option>
@@ -39,10 +36,8 @@ get_header();
 
      <button type="submit" name='' class="btn btn-primary mb-2">Filter</button>
     </form>
-
-
   </div>
-</div>
+
 
 
 
@@ -100,7 +95,6 @@ function listAllEvents(){
 
           while( $events->have_posts() ) :
             $events->the_post();
-
             //<!-- For Each Post -->
             echo  '<div class="col-sm-4">';
             echo '<div class="card" style="width: 18rem; height: 28rem;">';
@@ -126,12 +120,12 @@ function listAllEvents(){
 
                     echo '<h5 class="card-title"> '.$event_name.'</h5>';
                     $event_description = the_field('event_description');
-                    echo '<p class="card-text">'. $event_description .' </p>';
+                    echo '<p class="card-text">'.$event_description.'</p>';
 
 
                   echo '</div>';
                   echo '<div class="card-body">';
-                    echo '<a href="'. $url .'" class="btn btn-primary">More..</a>';
+                    echo '<a href="'. $url .'" class="btn btn-primary">More</a>';
                   echo '</div>';
                 echo '</div>';
 
@@ -153,13 +147,6 @@ function listAllEvents(){
 listAllEvents();
 
 ?>
-
-
-
-
-
-
-
 
 
 <!-- ========== END PAGE TEMPLATE ========== -->
