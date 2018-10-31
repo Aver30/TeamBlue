@@ -164,6 +164,7 @@ listAllEvents();
 
 <!-- ========== END PAGE TEMPLATE ========== -->
 </section>
+</div>
 
 
 <?php get_footer(); ?>

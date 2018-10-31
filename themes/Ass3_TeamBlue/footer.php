@@ -1,53 +1,45 @@
-<div class="jumbotron text-center" style="margin-bottom:0px">
-    <div class="container no-gutter">
-        <div class="row no-gutter" style="margin-top: auto; padding-top: 0px">
-            <div class="col-sm-6">
+<footer>
+      <!-- Subscriber Box -->
+      <div class="container-fluid" id="subscribe"> <br>
+        <div class="row">
+          <div class="col-sm-6" id="subscriber-box">
+            <h2>FOLLOW US</h2>
+            <a href="#" class="fa fa-facebook" id="fb"></a>
+            <a href="#" class="fa fa-twitter" id="twitter"></a>
+            <a href="#" class="fa fa-youtube" id="youtube"></a>
+            <a href="#" class="fa fa-google" id="google"></a>
+            <a href="#" class="fa fa-instagram" id="instagram"></a>
+          </div>
 
-                <img src="wp-content/themes/Ass3_TeamBlue/Sponsor1.png" width=100px height=60px>
-
-                <img src="wp-content/themes/Ass3_TeamBlue/Sponsor2.png" width=100px height=60px>
-
-                <img src="wp-content/themes/Ass3_TeamBlue/Sponsor3.png" width=100px height=60px>
-
-                <img src="wp-content/themes/Ass3_TeamBlue/Sponsor4.png" width=100px height=60px>
-
+          <div class="col-sm-6">
+            <h2>SUBSCRIBE TO OUR NEWSLETTER</h2>
+            <div class="input-group mb-3">
+              <input id="input-email" type="text" class="form-control" placeholder="Enter your email address" aria-label="Enter your email address" aria-describedby="button-addon2">
+              <div class="input-group-append" id="subscribebutton">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">SUBSCRIBE</button>
+              </div>
             </div>
-            <div class="col-sm-5">
-                <form action="/action_page.php">
-                 <div class="form-group" style="text-align: left">
-                 <label for="email">Subcribe Now!</label>
-                  <div class="form-inline">
-                    <input type="email" class="form-control" id="email" size="30" placeholder="Enter Email Address">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </div>
-                 </div>
-                </form>
-            </div>
-
-
-
+          </div>
         </div>
-        <div width="100%">
-            <h2>Follow Us On:</h2>
-            <img src="wp-content/themes/Ass3_TeamBlue/social-media-icons.png" height="70px" width="90px">
-            </div>
+      </div>
 
+      <!-- Advert Banner -->
+      <div class="container-fluid" id="advert"><br>
 
+      </div>
 
-    </div>
-    <footer class="footer" style="padding-top: 30px; background-color: #E8E8E8">
-      <div class="container" style="text-align: center">
-        <span class="text-muted">
-        HRAFF - Human Rights Arts & Film Festival - hraff.org.au  -
-            <a href="#">Contant Us</a>  - <a href="#"> Terms & Conditions</a> - <a href="#"> Privacy</a>
+      <!-- Sponser banner -->
+      <div class="container-fluid" id="sponser"><br>
 
-        </span>
+      </div>
+
+      <!-- CopyRight banner -->
+      <div class="container-fluid" id="copyright"><br>
+
       </div>
         <?php wp_footer(); ?> <!-- Include this before clsoing body -->
     </footer>
-
+    
 </div>
-
-
 </body>
 </html>
