@@ -30,7 +30,10 @@
 
       <!-- Sponser banner -->
       <div class="container-fluid" id="sponser"><br>
-
+        <img src="wp-content/themes/Ass3_TeamBlue/Sponsor1.png" width=310px height=100px>
+        <img src="wp-content/themes/Ass3_TeamBlue/Sponsor2.png" width=310px height=100px>
+        <img src="wp-content/themes/Ass3_TeamBlue/Sponsor3.png" width=310px height=100px>
+        <img src="wp-content/themes/Ass3_TeamBlue/Sponsor4.png" width=310px height=100px>
       </div>
 
       <!-- CopyRight banner -->

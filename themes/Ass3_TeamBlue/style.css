@@ -65,7 +65,7 @@ h2 {color: #e67e22;font-family: 'Josefin Sans';}
 
 #advert {height: 25vh;}
 
-#sponser {background-color: #424242;height: 25vh;}
+#sponser {background-color: #424242; height: 25vh;}
 
 .fill {
     display: flex;
@@ -104,8 +104,4 @@ h2 {color: #e67e22;font-family: 'Josefin Sans';}
 
 h6 {
   color: #424242;
-}
-
-#catagories {
-  padding-left: 7vw;
 }

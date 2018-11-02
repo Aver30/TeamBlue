@@ -15,11 +15,13 @@
       $queryPost->the_post();
 
       $event_name = get_field('event_name');
-      $event_type = get_field('event_type');
-      $event_des = get_field('event_description');
-      $event_topic = get_field('event_topic');
-      $event_image = get_field('event_image');
       $event_date = get_field('event_date');
+      $event_image = get_field('event_image');
+      $event_location = get_field('event_city');
+      $event_des = get_field('event_full');
+      $event_reviewer = get_field('event_reviewer');
+      $event_review = get_field('event_review');
+
 
       // This Prints Image.
       echo '<img src="';
@@ -28,6 +30,13 @@
 
      // End row
      echo '</div>';
+
+     // event quote
+     echo '<div>';
+       echo '<h4>"';
+       print_r($event_review);
+       echo '"</h4>';
+     echo'</div>';
 
      echo '<div>';
      print_r($event_des);
