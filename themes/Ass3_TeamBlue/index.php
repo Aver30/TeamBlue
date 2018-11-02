@@ -10,23 +10,23 @@ get_header();
 
   <div id="catagories" style="margin-top: 40px">
     <form class="form-inline">
-      <select  method="post" class="form-control col-sm-3 " name='city' style="margin-left: 20px; margin-right: 20px">
+      <select  method="post" class="form-control col-sm-3 " name='city' style="margin-left: 20px; margin-right: 20px;font-family: Josefin Sans;">
         <option value="">All Locations</option>
         <option value="Melbourne">Melbourne</option>
         <option value="Canberra">Canberra</option>
         <option value="Canberra">Sydney</option>
       </select>
 
-      <select class="form-control col-sm-3" name='topic' style="margin-right: 20px">
-        <option value="">All Topics</option>
-        <option value="Conflict">Conflict</option>
+      <select class="form-control col-sm-3" name='topic' style="margin-right: 20px; font-family: Josefin Sans;">
+        <option value="" >All Topics</option>
+        <option value="Conflict" >Conflict</option>
         <option value="Woman Rights">Woman Rights</option>
         <option value="Woman">Woman</option>
-        <option value="Expression">Express Yourself</option>
+        <option value="Expression" >Express Yourself</option>
         <option value="Profile">Profile</option>
       </select>
 
-      <select  class="form-control col-sm-3 " name='type' style="margin-right: 20px">
+      <select  class="form-control col-sm-3 " name='type' style="margin-right: 20px; font-family: Josefin Sans;">
         <option value="">All Types</option>
         <option value="Film">Film</option>
         <option value="Music">Music</option>
@@ -34,7 +34,7 @@ get_header();
 
       </select>
 
-     <button type="submit" name='' class="btn btn-primary mb-2">Filter</button>
+     <button type="submit" name='' class="btn btn-primary mb-2" style="font-family: Josefin Sans;">Filter</button>
     </form>
   </div>
 
@@ -116,16 +116,18 @@ function listAllEvents(){
                   echo '" style="width: 18rem; height: 8rem">';
 
 
-                  echo '<div class="card-body" style="height: 15rem;">';
+                  echo '<div class="card-body" style="height: 15rem;font-family: Josefin Sans";>';
                     $event_name = the_field('event_name');
 
-                    echo '<h5 class="card-title"> '.$event_name.'</h5>';
+                    echo '<div class="card-title"> ';
+                    print_r($event_name);
+                    echo '</div>';
                     $event_description = the_field('event_description');
                     echo '<p class="card-text">'.$event_description.'</p>';
 
 
                   echo '</div>';
-                  echo '<div class="card-body">';
+                  echo '<div class="card-body" style="font-family: Josefin Sans;">';
                     echo '<a href="'. $url .'" class="btn btn-primary">More</a>';
                   echo '</div>';
                 echo '</div>';
