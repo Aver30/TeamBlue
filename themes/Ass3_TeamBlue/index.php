@@ -66,6 +66,7 @@ function listAllEvents(){
 
     $args = array(
       'post_type' => 'event',
+      'posts_per_page'=>-1,
       'tax_query' => array(
         array(
           'taxonomy' => 'city',
